@@ -24,8 +24,9 @@ fn main() {
             u64_bytes.copy_from_slice(&blake2b_256(&data)[0..8]);
             let blake2b_u64 = u64::from_le_bytes(u64_bytes);
             let blake2b_range = map_to_range(blake2b_u64, nm);
-            println!("round={}, n={:>8}, sip=({:>20} => {:<15})", round, n, sip_u64, sip_range);
-            println!("                 blake2b=({:>20} => {:<15})\n", blake2b_u64, blake2b_range);
+            println!("round={}, n={:<8}, sip=({:>20} => {:<15})", round, n, sip_u64, sip_range);
+            println!("                 blake2b=({:>20} => {:<15})", blake2b_u64, blake2b_range);
         }
+        println!("");
     }
 }
